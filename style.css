@@ -9,14 +9,22 @@ body {
 }
 
 .hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background: #FDF6B2; /* pastel yellow */
   padding: 20px;
+  background: transparent; /* or remove background */
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-button {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
