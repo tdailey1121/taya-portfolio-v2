@@ -1,3 +1,7 @@
+body.locked-scroll {
+  overflow: hidden;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #333;
@@ -18,36 +22,37 @@ body {
   background: transparent;
 }
 
+.hero-title,
+.hero-subtitle,
+.hero-button {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-title {
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
   margin: 0;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   margin: 10px 0 30px;
   color: #666;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-button {
-  background: #D8F3DC; /* pastel mint */
+  background: #D8F3DC;
   color: #333;
   text-decoration: none;
   padding: 12px 30px;
   font-size: 1rem;
   border-radius: 8px;
   transition: background 0.3s, transform 0.2s;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-button:hover {
-  background: #EAD7F3; /* pastel lavender */
+  background: #EAD7F3;
   transform: scale(1.05);
 }
 
@@ -67,6 +72,14 @@ body {
 .about p {
   font-size: 1.2rem;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about p.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .morphing-blob {
@@ -76,22 +89,6 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  filter: blur(8px);
+  filter: blur(12px);
   pointer-events: none;
-  animation: colorShift 30s ease-in-out infinite alternate;
-}
-
-@keyframes colorShift {
-  0% {
-    fill: #FDF6B2; /* pastel yellow */
-  }
-  33% {
-    fill: #D8F3DC; /* pastel mint */
-  }
-  66% {
-    fill: #EAD7F3; /* pastel lavender */
-  }
-  100% {
-    fill: #FDF6B2;
-  }
 }
