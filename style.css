@@ -1,4 +1,6 @@
-/* Google fonts loaded via link in HTML */
+body.locked-scroll {
+  overflow: hidden;
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -9,14 +11,22 @@ body {
 }
 
 .hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background: #FDF6B2; /* pastel yellow */
   padding: 20px;
+  background: transparent;
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-button {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
@@ -32,7 +42,7 @@ body {
 }
 
 .hero-button {
-  background: #D8F3DC; /* pastel mint */
+  background: #D8F3DC;
   color: #333;
   text-decoration: none;
   padding: 12px 30px;
@@ -42,7 +52,7 @@ body {
 }
 
 .hero-button:hover {
-  background: #EAD7F3; /* pastel lavender */
+  background: #EAD7F3;
   transform: scale(1.05);
 }
 
@@ -62,4 +72,23 @@ body {
 .about p {
   font-size: 1.2rem;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.morphing-blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  filter: blur(12px);
+  pointer-events: none;
 }
