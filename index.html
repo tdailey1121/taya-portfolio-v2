@@ -11,7 +11,21 @@
 <body>
 
   <header class="hero">
-    <div class="morphing-blob"></div>
+    <svg class="morphing-blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <path fill="#EAD7F3" opacity="0.5">
+        <animate 
+          attributeName="d"
+          dur="15s"
+          repeatCount="indefinite"
+          values="
+            M421,301Q417,352,371,375Q325,398,274,414Q223,430,190,392Q157,354,151,300Q145,246,180,204Q215,162,268,157Q321,152,371,176Q421,200,421,301Z;
+            M422,296Q419,342,377,373Q335,404,280,422Q225,440,184,402Q143,364,149,309Q155,254,193,208Q231,162,285,152Q339,142,374,187Q409,232,422,296Z;
+            M418,296Q427,342,384,366Q341,390,289,404Q237,418,188,388Q139,358,137,303Q135,248,170,206Q205,164,254,161Q303,158,360,178Q417,198,418,296Z;
+            M421,301Q417,352,371,375Q325,398,274,414Q223,430,190,392Q157,354,151,300Q145,246,180,204Q215,162,268,157Q321,152,371,176Q421,200,421,301Z
+          "
+        />
+      </path>
+    </svg>
     <h1 class="hero-title">Taya Dailey</h1>
     <p class="hero-subtitle">Web Dev / Analytics Portfolio</p>
     <a href="#about" class="hero-button">Who am I?</a>
@@ -23,10 +37,6 @@
     <p class="fade-line">I built and launched this site using HTML, CSS, and JavaScript to showcase real-world projects powered by Python and SQL.</p>
     <p class="fade-line">My goal is to create experiences that are not only data-driven, but also intuitive and engaging.</p>
   </section>
-
-  <script src="main.js"></script>
-</body>
-</html>
 
   <script src="main.js"></script>
 </body>
