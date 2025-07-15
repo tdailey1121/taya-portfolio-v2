@@ -56,17 +56,49 @@ body {
   transform: scale(1.05);
 }
 
-.about {
-  max-width: 700px;
-  margin: 80px auto;
-  padding: 0 20px;
-  text-align: center;
+.divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.about h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.about {
+  position: relative;
+  background: linear-gradient(to bottom, #FCF9E8 0%, #fff 100%);
+  border-radius: 30px;
+  padding: 80px 20px;
+  margin: -40px auto 80px;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.about::before, .about::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.2;
+  z-index: 0;
+}
+.about::before {
+  width: 200px;
+  height: 200px;
+  background: #EAD7F3;
+  top: -100px;
+  left: -50px;
+}
+.about::after {
+  width: 150px;
+  height: 150px;
+  background: #D8F3DC;
+  bottom: -80px;
+  right: -30px;
+}
+
+.about h2, .about p {
+  position: relative;
+  z-index: 1;
 }
 
 .about p {
