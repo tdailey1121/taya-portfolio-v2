@@ -1,8 +1,6 @@
-// unlock scroll when button clicked
 document.querySelector('.unlock-scroll').addEventListener('click', function() {
   document.body.classList.remove('locked-scroll');
 
-  // fade in lines like typing
   const lines = document.querySelectorAll('.fade-line');
   lines.forEach((line, index) => {
     setTimeout(() => {
@@ -10,3 +8,4 @@ document.querySelector('.unlock-scroll').addEventListener('click', function() {
     }, index * 1000);
   });
 });
+
