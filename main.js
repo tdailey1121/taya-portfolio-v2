@@ -1,6 +1,4 @@
 document.querySelector('.unlock-scroll').addEventListener('click', function() {
-  document.body.classList.remove('locked-scroll');
-
   const lines = document.querySelectorAll('.about .fade-line');
   lines.forEach((line, index) => {
     setTimeout(() => {
@@ -10,6 +8,7 @@ document.querySelector('.unlock-scroll').addEventListener('click', function() {
 });
 
 document.querySelector('.unlock-projects').addEventListener('click', function() {
+  document.body.classList.remove('locked-scroll'); // <-- moved here
   const projects = document.querySelectorAll('.projects .fade-line');
   projects.forEach((proj, index) => {
     setTimeout(() => {
