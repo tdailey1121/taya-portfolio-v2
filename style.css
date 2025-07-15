@@ -1,100 +1,13 @@
-.section-underline {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #FDF6B2, #D8F3DC, #EAD7F3);
-  margin: 0 auto 30px;
-  border-radius: 2px;
-}
-
-.about {
-  background: #FBF9FF;
-  padding: 80px 20px;
-}
-
-.projects {
-  background: #F8FFFA;
-  padding: 80px 20px;
-}
-
-.skills-slider {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin-top: 50px;
-}
-.skills-track {
-  display: flex;
-  width: calc(200px * 10);
-  animation: slideSkills 20s linear infinite;
-}
-.skill-bubble {
-  flex: 0 0 auto;
-  margin: 0 20px;
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: linear-gradient(135deg, #FDF6B2, #EAD7F3);
+/* Base styles */
+body {
+  font-family: 'Open Sans', sans-serif;
   color: #333;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-@keyframes slideSkills {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  background: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-.project-card {
-  background: white;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.project-card:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-.floating-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.4;
-  animation: floatBlob 15s ease-in-out infinite alternate;
-  z-index: 0;
-}
-.blob1 {
-  width: 300px;
-  height: 300px;
-  top: 20%;
-  left: 10%;
-  background: #EAD7F3;
-}
-.blob2 {
-  width: 400px;
-  height: 400px;
-  top: 50%;
-  left: 60%;
-  background: #D8F3DC;
-  animation-delay: 5s;
-}
-@keyframes floatBlob {
-  0% { transform: translate(0, 0) scale(1);}
-  50% { transform: translate(20px, -30px) scale(1.1);}
-  100% { transform: translate(0, 0) scale(1);}
-}
-
-.projects.locked {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 1s ease, opacity 1s ease;
-}
-.projects {
-  max-height: 1000px;
-  opacity: 1;
-}
-
+/* Section underline decorative bar */
 .section-underline {
   width: 80px;
   height: 4px;
@@ -103,26 +16,31 @@
   border-radius: 2px;
 }
 
+/* About & Projects sections */
 .about {
   background: #FBF9FF;
   padding: 80px 20px;
 }
+
 .projects {
   background: #F8FFFA;
   padding: 80px 20px;
 }
 
+/* Skills slider */
 .skills-slider {
   overflow: hidden;
   position: relative;
   width: 100%;
   margin-top: 50px;
 }
+
 .skills-track {
   display: flex;
   width: calc(200px * 10);
   animation: slideSkills 30s linear infinite;
 }
+
 .skill-bubble {
   flex: 0 0 auto;
   margin: 0 20px;
@@ -133,11 +51,13 @@
   font-size: 1rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
+
 @keyframes slideSkills {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
+/* Project cards */
 .project-card {
   background: white;
   padding: 20px;
@@ -148,15 +68,18 @@
   opacity: 0;
   transform: translateY(20px);
 }
+
 .project-card.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 .project-card:hover {
   transform: scale(1.05) translateY(-5px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
+/* Floating blobs */
 .floating-blob {
   position: absolute;
   border-radius: 50%;
@@ -165,6 +88,7 @@
   animation: floatBlob 15s ease-in-out infinite alternate;
   z-index: 0;
 }
+
 .blob1 {
   width: 300px;
   height: 300px;
@@ -172,6 +96,7 @@
   left: 10%;
   background: #EAD7F3;
 }
+
 .blob2 {
   width: 400px;
   height: 400px;
@@ -180,24 +105,41 @@
   background: #D8F3DC;
   animation-delay: 5s;
 }
+
 @keyframes floatBlob {
-  0% { transform: translate(0, 0) scale(1);}
-  50% { transform: translate(20px, -30px) scale(1.1);}
-  100% { transform: translate(0, 0) scale(1);}
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -30px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
+/* Scroll lock */
 body.locked-scroll {
   height: 100vh;
   overflow: hidden;
 }
 
+/* Locked sections */
 .about.locked, .projects.locked {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 1s ease, opacity 1s ease;
 }
+
+/* Sections unlocked */
 .about, .projects {
   max-height: 1000px;
   opacity: 1;
+}
+
+/* Fade-in lines for about section */
+.fade-line {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-line.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
