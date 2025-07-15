@@ -6,6 +6,14 @@ body {
   padding: 0;
 }
 
+body.locked-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* --------------------
+   HERO SECTION
+--------------------- */
 .hero {
   display: flex;
   flex-direction: column;
@@ -42,6 +50,7 @@ body {
   border-radius: 8px;
   transition: background 0.3s, transform 0.2s;
   z-index: 1;
+  margin-bottom: 15px;
 }
 
 .hero-button:hover {
@@ -49,85 +58,9 @@ body {
   transform: scale(1.05);
 }
 
-.section-underline {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #FDF6B2, #D8F3DC, #EAD7F3);
-  margin: 0 auto 30px;
-  border-radius: 2px;
-}
-
-.about {
-  background: #FBF9FF;
-  padding: 80px 20px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 1s ease, opacity 1s ease;
-}
-
-.about:not(.locked) {
-  max-height: 1000px;
-  opacity: 1;
-}
-
-.projects {
-  background: #F8FFFA;
-  padding: 80px 20px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 1s ease, opacity 1s ease;
-}
-
-.projects:not(.locked) {
-  max-height: 1000px;
-  opacity: 1;
-}
-
-.skills-slider {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin-top: 50px;
-}
-
-.skills-track {
-  display: flex;
-  width: calc(200px * 10);
-  animation: slideSkills 30s linear infinite;
-}
-
-.skill-bubble {
-  flex: 0 0 auto;
-  margin: 0 20px;
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: linear-gradient(135deg, #FDF6B2, #EAD7F3);
-  color: #333;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-@keyframes slideSkills {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.project-card {
-  background: white;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
+/* --------------------
+   FLOATING BLOBS
+--------------------- */
 .floating-blob {
   position: absolute;
   border-radius: 50%;
@@ -160,36 +93,21 @@ body {
   100% { transform: translate(0, 0) scale(1); }
 }
 
-body.locked-scroll {
-  height: 100vh;
+/* --------------------
+   ABOUT SECTION AS CARD
+--------------------- */
+.about.locked,
+.projects.locked {
+  max-height: 0;
   overflow: hidden;
+  opacity: 0;
+  transition: max-height 1s ease, opacity 1s ease;
 }
 
-/* Reduce vertical padding in about and projects sections */
-.about, .projects {
-  padding: 50px 20px;
-}
-
-/* Consistent paragraph spacing in About */
-.about p {
-  margin-bottom: 1.5rem;
-}
-
-/* Bring hero buttons closer to the sections they reveal */
-.hero-button {
-  margin-bottom: 15px;
-}
-
-/* Optional: subtle separator below About section */
-.about {
-  position: relative;
-  border-bottom: 2px solid #EAD7F3; /* pastel lavender */
-  padding-bottom: 40px; /* extra bottom padding to balance border */
-}
-
-/* Slightly reduce bottom padding in About for balance */
-.about p:last-child {
-  margin-bottom: 0;
+.about,
+.projects {
+  max-height: 1000px;
+  opacity: 1;
 }
 
 .about {
@@ -208,15 +126,93 @@ body.locked-scroll {
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
 .about p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   color: #333;
 }
 
-/* Optional: style the section title similar to projects */
-.about h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+.about .hero-button {
+  margin-top: 30px;
+  display: inline-block;
+}
+
+/* --------------------
+   SKILLS SLIDER
+--------------------- */
+.skills-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 50px 0;
+}
+
+.skills-track {
+  display: flex;
+  width: calc(200px * 10);
+  animation: slideSkills 30s linear infinite;
+}
+
+.skill-bubble {
+  flex: 0 0 auto;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #FDF6B2, #EAD7F3);
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+@keyframes slideSkills {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --------------------
+   PROJECTS SECTION
+--------------------- */
+.projects {
+  background: #F8FFFA;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FDF6B2, #D8F3DC, #EAD7F3);
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, transform 0.6s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
