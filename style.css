@@ -164,3 +164,30 @@ body.locked-scroll {
   height: 100vh;
   overflow: hidden;
 }
+
+/* Reduce vertical padding in about and projects sections */
+.about, .projects {
+  padding: 50px 20px;
+}
+
+/* Consistent paragraph spacing in About */
+.about p {
+  margin-bottom: 1.5rem;
+}
+
+/* Bring hero buttons closer to the sections they reveal */
+.hero-button {
+  margin-bottom: 15px;
+}
+
+/* Optional: subtle separator below About section */
+.about {
+  position: relative;
+  border-bottom: 2px solid #EAD7F3; /* pastel lavender */
+  padding-bottom: 40px; /* extra bottom padding to balance border */
+}
+
+/* Slightly reduce bottom padding in About for balance */
+.about p:last-child {
+  margin-bottom: 0;
+}
