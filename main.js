@@ -1,4 +1,7 @@
 document.querySelector('.unlock-scroll').addEventListener('click', function() {
+  const aboutSection = document.querySelector('.about');
+  aboutSection.classList.remove('locked');
+
   const lines = document.querySelectorAll('.about .fade-line');
   lines.forEach((line, index) => {
     setTimeout(() => {
@@ -9,9 +12,10 @@ document.querySelector('.unlock-scroll').addEventListener('click', function() {
 
 document.querySelector('.unlock-projects').addEventListener('click', function() {
   document.body.classList.remove('locked-scroll');
-  document.querySelector('.projects').classList.remove('locked');
+  const projectsSection = document.querySelector('.projects');
+  projectsSection.classList.remove('locked');
 
-  const projects = document.querySelectorAll('.projects .fade-line');
+  const projects = document.querySelectorAll('.projects .fade-line, .project-card');
   projects.forEach((proj, index) => {
     setTimeout(() => {
       proj.classList.add('visible');
