@@ -1,49 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Taya Dailey Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-</head>
-<body class="locked-scroll">
+<header class="hero">
+  <svg class="morphing-blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#FDF6B2;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#D8F3DC;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#EAD7F3;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <path fill="url(#grad)">
+      <animate 
+        attributeName="d"
+        dur="10s"
+        repeatCount="indefinite"
+        values="
+          M421,301Q417,352,371,375Q325,398,274,414Q223,430,190,392Q157,354,151,300Q145,246,180,204Q215,162,268,157Q321,152,371,176Q421,200,421,301Z;
+          M460,300Q447,360,390,387Q333,414,278,427Q223,440,177,404Q131,368,121,309Q111,250,159,206Q207,162,265,140Q323,118,374,156Q425,194,454,247Q483,300,460,300Z;
+          M420,320Q418,370,369,393Q320,416,269,417Q218,418,176,382Q134,346,124,298Q114,250,150,210Q186,170,241,159Q296,148,354,167Q412,186,420,243Q428,300,420,320Z;
+          M421,301Q417,352,371,375Q325,398,274,414Q223,430,190,392Q157,354,151,300Q145,246,180,204Q215,162,268,157Q321,152,371,176Q421,200,421,301Z
+        "
+      />
+    </path>
+  </svg>
+  <h1 class="hero-title">Taya Dailey</h1>
+  <p class="hero-subtitle">Web Dev / Analytics Portfolio</p>
+  <a href="#about" class="hero-button unlock-scroll">Who am I?</a>
+</header>
 
-  <header class="hero">
-    <svg class="morphing-blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#FDF6B2;stop-opacity:1" />
-          <stop offset="50%" style="stop-color:#D8F3DC;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#EAD7F3;stop-opacity:1" />
-        </linearGradient>
-      </defs>
-      <path fill="url(#grad)">
-        <animate 
-          attributeName="d"
-          dur="10s"
-          repeatCount="indefinite"
-          values="
-            M421,301Q417,352,371,375Q325,398,274,414Q223,430,190,392Q157,354,151,300Q145,246,180,204Q215,162,268,157Q321,152,371,176Q421,200,421,301Z;
-            M460,300Q447,360,390,387Q333,414,278,427Q223,440,177,404Q131,368,121,309Q111,250,159,206Q207,162,265,140Q323,118,374,156Q425,194,454,247Q483,300,460,300Z;
-            M420,320Q418,370,369,393Q320,416,269,417Q218,418,176,382Q134,346,124,298Q114,250,150,210Q186,170,241,159Q296,148,354,167Q412,186,420,243Q428,300,420,320Z;
-            M421,301Q417,352,371,375Q325,398,274,414Q223,430,190,392Q157,354,151,300Q145,246,180,204Q215,162,268,157Q321,152,371,176Q421,200,421,301Z
-          "
-        />
-      </path>
-    </svg>
-    <h1 class="hero-title">Taya Dailey</h1>
-    <p class="hero-subtitle">Web Dev / Analytics Portfolio</p>
-    <a href="#about" class="hero-button unlock-scroll">Who am I?</a>
-  </header>
+<section class="divider">
+  <svg viewBox="0 0 1440 320">
+    <path fill="#FCF9E8" fill-opacity="1" 
+          d="M0,192L48,186.7C96,181,192,171,288,149.3C384,128,480,96,576,117.3C672,139,768,213,864,234.7C960,256,1056,224,1152,213.3C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+    </path>
+  </svg>
+</section>
 
-  <section id="about" class="about locked">
-    <h2>About Me</h2>
-    <p class="fade-line">I'm a data analyst expanding into front-end development — blending analytics, design, and code without starting over.</p>
-    <p class="fade-line">I built and launched this site using HTML, CSS, and JavaScript to showcase real-world projects powered by Python and SQL.</p>
-    <p class="fade-line">My goal is to create experiences that are not only data-driven, but also intuitive and engaging.</p>
-  </section>
+<section id="about" class="about locked">
+  <h2>About Me</h2>
+  <p class="fade-line">I'm a data analyst expanding into front-end development — blending analytics, design, and code without starting over.</p>
+  <p class="fade-line">I built and launched this site using HTML, CSS, and JavaScript to showcase real-world projects powered by Python and SQL.</p>
+  <p class="fade-line">My goal is to create experiences that are not only data-driven, but also intuitive and engaging.</p>
+</section>
+
+<script src="main.js"></script>
+
 
   <script src="main.js"></script>
 </body>
