@@ -60,6 +60,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  margin-top: -4px;
 }
 
 .about {
@@ -124,3 +125,4 @@ body {
   filter: blur(12px);
   pointer-events: none;
 }
+
