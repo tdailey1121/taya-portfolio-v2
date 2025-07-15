@@ -1,151 +1,87 @@
-body.locked-scroll {
-  overflow: hidden;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  color: #333;
-  background: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  padding: 20px;
-  background: transparent;
-}
-
-.hero-title,
-.hero-subtitle,
-.hero-button {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 4rem;
-  margin: 0;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  margin: 10px 0 30px;
-  color: #666;
-}
-
-.hero-button {
-  background: #D8F3DC;
-  color: #333;
-  text-decoration: none;
-  padding: 12px 30px;
-  font-size: 1rem;
-  border-radius: 8px;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.hero-button:hover {
-  background: #EAD7F3;
-  transform: scale(1.05);
-}
-
-.divider svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: -4px;
+.section-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FDF6B2, #D8F3DC, #EAD7F3);
+  margin: 0 auto 30px;
+  border-radius: 2px;
 }
 
 .about {
-  position: relative;
-  background: linear-gradient(to bottom, #FCF9E8 0%, #fff 100%);
-  border-radius: 30px;
+  background: #FBF9FF;
   padding: 80px 20px;
-  margin: -40px auto 80px;
-  max-width: 700px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.about::before, .about::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.2;
-  z-index: 0;
-}
-.about::before {
-  width: 200px;
-  height: 200px;
-  background: #EAD7F3;
-  top: -100px;
-  left: -50px;
-}
-.about::after {
-  width: 150px;
-  height: 150px;
-  background: #D8F3DC;
-  bottom: -80px;
-  right: -30px;
-}
-
-.about h2, .about p {
-  position: relative;
-  z-index: 1;
-}
-
-.about p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.about p.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.morphing-blob {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  filter: blur(12px);
-  pointer-events: none;
 }
 
 .projects {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
-  text-align: center;
+  background: #F8FFFA;
+  padding: 80px 20px;
 }
 
-.project-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+.skills-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+}
+.skills-track {
+  display: flex;
+  width: calc(200px * 10);
+  animation: slideSkills 20s linear infinite;
+}
+.skill-bubble {
+  flex: 0 0 auto;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #FDF6B2, #EAD7F3);
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+@keyframes slideSkills {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .project-card {
-  background: #FDF6B2;
+  background: white;
   padding: 20px;
-  border-radius: 20px;
+  margin: 20px;
+  border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.floating-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  animation: floatBlob 15s ease-in-out infinite alternate;
+  z-index: 0;
+}
+.blob1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 10%;
+  background: #EAD7F3;
+}
+.blob2 {
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 60%;
+  background: #D8F3DC;
+  animation-delay: 5s;
+}
+@keyframes floatBlob {
+  0% { transform: translate(0, 0) scale(1);}
+  50% { transform: translate(20px, -30px) scale(1.1);}
+  100% { transform: translate(0, 0) scale(1);}
 }
 
 .projects.locked {
@@ -155,12 +91,6 @@ body {
   transition: max-height 1s ease, opacity 1s ease;
 }
 .projects {
-  max-height: 1000px; /* adjust if needed */
+  max-height: 1000px;
   opacity: 1;
-}
-
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
