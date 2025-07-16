@@ -6,6 +6,7 @@ body {
   padding: 0;
 }
 
+/* HERO */
 .hero {
   display: flex;
   flex-direction: column;
@@ -51,39 +52,68 @@ body {
   transform: scale(1.05);
 }
 
-.section-underline {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #FDF6B2, #D8F3DC, #EAD7F3);
-  margin: 0 auto 30px;
-  border-radius: 2px;
+/* DIVIDER */
+.divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: -4px;
 }
 
-.about, .projects {
-  position: relative;
-  padding: 50px 20px;
-  text-align: center;
-}
-
+/* ABOUT - final fancy merged version */
 .about {
-  background: white;
-  max-width: 700px;
+  position: relative;
+  background: linear-gradient(to bottom, #FCF9E8 0%, #fff 100%);
+  border-radius: 30px;
+  padding: 80px 20px;
   margin: 60px auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.about::before, .about::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.2;
+  z-index: 0;
+}
+.about::before {
+  width: 200px;
+  height: 200px;
+  background: #EAD7F3;
+  top: -100px;
+  left: -50px;
+}
+.about::after {
+  width: 150px;
+  height: 150px;
+  background: #D8F3DC;
+  bottom: -80px;
+  right: -30px;
+}
+
+.about h2, .about p {
+  position: relative;
+  z-index: 1;
 }
 
 .about p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.about h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+.about p.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* SKILLS SLIDER */
 .skills-slider {
   overflow: hidden;
   position: relative;
@@ -109,6 +139,7 @@ body {
   100% { transform: translateX(-50%); }
 }
 
+/* PROJECTS */
 .project-cards {
   display: flex;
   flex-wrap: wrap;
@@ -138,7 +169,7 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* Floating blobs */
+/* FLOATING BLOBS (hero + about) */
 .floating-blob {
   position: absolute;
   border-radius: 50%;
@@ -188,6 +219,7 @@ body {
   100% { transform: translate(0, 0) scale(1); }
 }
 
+/* SCROLL LOCKED STATES */
 body.locked-scroll {
   height: 100vh;
   overflow: hidden;
@@ -204,6 +236,19 @@ body.locked-scroll {
   opacity: 1;
 }
 
+/* EXTRA SPACING ON ABOUT BUTTON */
 #about .hero-button {
   margin-top: 40px;
+}
+
+/* MORPHING BLOB SVG (old hero blob) */
+.morphing-blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  filter: blur(12px);
+  pointer-events: none;
 }
