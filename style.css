@@ -252,3 +252,16 @@ body.locked-scroll {
   filter: blur(12px);
   pointer-events: none;
 }
+
+/* Fix spacing under skills slider for the about section button */
+.about .hero-button {
+  display: inline-block;
+  margin-top: 60px;
+}
+
+/* Optional: adjust on small screens for tighter spacing */
+@media (max-width: 600px) {
+  .about .hero-button {
+    margin-top: 40px;
+  }
+}
