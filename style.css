@@ -236,11 +236,6 @@ body.locked-scroll {
   opacity: 1;
 }
 
-/* EXTRA SPACING ON ABOUT BUTTON */
-#about .hero-button {
-  margin-top: 60px;
-}
-
 /* MORPHING BLOB SVG (old hero blob) */
 .morphing-blob {
   position: absolute;
@@ -253,15 +248,12 @@ body.locked-scroll {
   pointer-events: none;
 }
 
-/* Fix spacing under skills slider for the about section button */
+/* Reduce button top margin */
 .about .hero-button {
+  margin-top: 20px; /* less aggressive */
   display: inline-block;
-  margin-top: 60px;
 }
 
-/* Optional: adjust on small screens for tighter spacing */
-@media (max-width: 600px) {
-  .about .hero-button {
-    margin-top: 40px;
-  }
-}
+/* Add bottom margin to skills slider for breathing room */
+.skills-slider {
+  margin-bottom: 80px; /* gives space below skills slider */
