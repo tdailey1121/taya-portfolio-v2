@@ -224,7 +224,7 @@ body {
   overflow: hidden;
 } */
 
-.about.locked, .projects.locked {
+/*.about.locked, .projects.locked {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -233,7 +233,7 @@ body {
 .about:not(.locked), .projects:not(.locked) {
   max-height: 1000px;
   opacity: 1;
-}
+} */
 
 /* EXTRA SPACING ON ABOUT BUTTON */
 #about .hero-button {
