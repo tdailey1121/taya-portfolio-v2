@@ -1,4 +1,5 @@
-document.querySelector('.unlock-scroll').addEventListener('click', function() {
+document.querySelector('.unlock-scroll').addEventListener('click', function () {
+  document.body.classList.remove('locked-scroll'); // ✅ this line added
   const lines = document.querySelectorAll('.about .fade-line');
   lines.forEach((line, index) => {
     setTimeout(() => {
@@ -7,7 +8,7 @@ document.querySelector('.unlock-scroll').addEventListener('click', function() {
   });
 });
 
-document.querySelector('.unlock-projects').addEventListener('click', function() {
+document.querySelector('.unlock-projects').addEventListener('click', function () {
   document.body.classList.remove('locked-scroll');
   const projects = document.querySelectorAll('.projects .fade-line');
   projects.forEach((proj, index) => {
