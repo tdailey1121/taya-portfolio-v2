@@ -219,11 +219,10 @@ body {
   100% { transform: translate(0, 0) scale(1); }
 }
 
-/* SCROLL LOCKED STATES */
-body.locked-scroll {
+/* body.locked-scroll {
   height: 100vh;
   overflow: hidden;
-}
+} */
 
 .about.locked, .projects.locked {
   max-height: 0;
