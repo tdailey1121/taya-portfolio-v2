@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Taya Dailey</title>
+  <link rel="stylesheet" href="resume_style.css">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="development.html">Development</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="case_studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Education & Experience Timeline -->
+    <section class="timeline">
+      <h1 data-aos="fade-up">Resume</h1>
+
+      <div class="timeline-item left" data-aos="fade-right">
+        <div class="content">
+          <h2>Oakland University — Rochester Hills, MI</h2>
+          <p><strong>Master of Science, Business Analytics</strong> — Expected May 2026</p>
+          <p><strong>Bachelor of Science, Management Information Systems</strong> — Dec 2022</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right" data-aos="fade-left">
+        <div class="content">
+          <h2>Blue Cross Blue Shield of Michigan — Detroit, MI</h2>
+          <p><strong>Data & Training Analyst</strong> | Jul 2023 – Aug 2025</p>
+          <ul>
+            <li>Developed AI-powered training content (Quantum Sim), streamlining onboarding and improving analyst learning efficiency.</li>
+            <li>Designed and optimized SharePoint process tools, enhancing remote collaboration and minimizing project delays.</li>
+            <li>Delivered executive-level dashboards and reports using SQL, Python, and Power BI to support strategic decision-making.</li>
+            <li>Automated recurring reporting workflows, reducing manual effort and freeing analyst time for higher-value tasks.</li>
+            <li>Collaborated across departments using Microsoft Teams and SharePoint, ensuring timely insights and communication.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Grid -->
+    <section class="skills">
+      <h2 data-aos="fade-up">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="zoom-in">
+          <h3>Workflow & Automation</h3>
+          <p>Power Automate, Power Apps, JSON Workflows, SharePoint Online, Salesforce</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Data & Analytics</h3>
+          <p>Power BI, Tableau, Excel, Python, R, DAX, ETL</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JavaScript, Bootstrap, VBA</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <h3>Databases & Querying</h3>
+          <p>SQL (SQLite, SQL Server)</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+          <h3>Cloud & AI</h3>
+          <p>Azure, Quantum Sim, ChatGPT</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+          <h3>Collaboration</h3>
+          <p>Git, GitHub, Google Suite</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
