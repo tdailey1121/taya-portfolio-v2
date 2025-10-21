@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects | Taya Dailey</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Projects styles -->
+  <link rel="stylesheet" href="projects_style.css" />
+</head>
+<body>
+  <!-- NAV (keeps consistent with your index) -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="case_studies.html">Case Studies</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="page-container">
+    <header class="projects-header">
+      <h1>Projects</h1>
+      <p class="subtitle">Exploring creativity through data, design, and automation.</p>
+
+      <!-- Filter Buttons -->
+      <div class="filters" role="tablist" aria-label="Project categories">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="webdev" role="tab">Web Dev</button>
+        <button class="filter-btn" data-filter="data" role="tab">Data Analytics</button>
+      </div>
+    </header>
+
+    <!-- Masonry Grid -->
+    <section class="masonry" id="projectsGrid" aria-live="polite">
+      <!-- Project Card: Higher Thought EnT -->
+      <article class="card project-card webdev" data-category="webdev" tabindex="0">
+        <div class="thumb">
+          <img src="Images/higherthought.png" alt="Higher Thought EnT site preview — ethereal homepage screenshot" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="meta">
+            <span class="category">Web Dev</span>
+          </div>
+          <h3 class="title">Higher Thought EnT</h3>
+          <p class="desc">
+            Developing a branded site for Higher Thought EnT — a creative collective focused on conscious storytelling and artistic collaboration. Built with custom HTML, CSS, and JavaScript. <em>Work in progress.</em>
+          </p>
+
+          <div class="card-actions">
+            <a class="btn ghost" href="https://tdailey1121.github.io/higherthoughtllc/" target="_blank" rel="noopener">View Live</a>
+            <a class="btn outline" href="https://github.com/tdailey1121/higherthoughtllc" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card: Customer Experience KPI Dashboard -->
+      <article class="card project-card data" data-category="data" tabindex="0">
+        <div class="thumb">
+          <img src="Images/customerKPI.png" alt="Customer Experience KPI Dashboard preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="meta">
+            <span class="category">Data Analytics</span>
+          </div>
+          <h3 class="title">Customer Experience KPI Dashboard</h3>
+          <p class="desc">
+            Built a Power BI dashboard to track support metrics — resolution time, percent resolved, and customer ratings. Includes DAX measures and interactive visuals to surface opportunities for faster chat resolutions.
+          </p>
+
+          <div class="card-actions">
+            <a class="btn ghost" href="#" target="_blank" rel="noopener" aria-disabled="true">Download PBIX (placeholder)</a>
+            <a class="btn outline" href="#" target="_blank" rel="noopener" aria-disabled="true">View README (placeholder)</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card: SQL Website Customer Insights -->
+      <article class="card project-card data" data-category="data" tabindex="0">
+        <div class="thumb">
+          <img src="Images/sql_conversion_table.png" alt="SQL conversion table preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="meta">
+            <span class="category">Data Analytics</span>
+          </div>
+          <h3 class="title">SQL Website Customer Insights</h3>
+          <p class="desc">
+            Created an SQLite dataset of synthetic website visitor data and wrote advanced SQL queries to surface conversion rates, session metrics by device, and campaign performance.
+          </p>
+
+          <div class="card-actions">
+            <a class="btn ghost" href="#" target="_blank" rel="noopener" aria-disabled="true">Download SQL (placeholder)</a>
+            <a class="btn outline" href="#" target="_blank" rel="noopener" aria-disabled="true">View README (placeholder)</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer (simple, consistent) -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Taya Dailey — Data • Design • Stories</p>
+  </footer>
+
+  <!-- ====== Scripts ====== -->
+  <script>
+    // Populate year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filter buttons logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // UI active toggle
+        filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.classList.contains(filter)) {
+            card.style.display = ''; // show (let CSS handle layout)
+            // small delay for intersection observer animation to re-run
+            card.classList.remove('visible');
+            setTimeout(()=> card.classList.add('visible'), 40);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // IntersectionObserver for entrance animation (fade/slide)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.project-card').forEach(c => {
+      io.observe(c);
+    });
+  </script>
+</body>
+</html>
