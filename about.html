@@ -3,36 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume | Taya Dailey</title>
-  <link rel="stylesheet" href="resumestyle.css">
-
-  <!-- AOS Animation Library -->
+  <title>About | Taya Dailey</title>
+  <link rel="stylesheet" href="about_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation -->
   <header>
     <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html" class="active">Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="development.html">Development</a></li>
-        <li><a href="analytics.html">Analytics</a></li>
-        <li><a href="case_studies.html">Case Studies</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="case_studies.html">Case Studies</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
+    <!-- Intro Section -->
+    <section class="intro" data-aos="fade-up">
+      <h1>About Taya Dailey</h1>
+      <p class="lead">
+        I’d love to introduce you to <strong>Taya Dailey</strong>, an exceptional young professional who is currently exploring her next opportunity. 
+        Taya brings a powerful blend of skills in <strong>Data Analytics, AI Development,</strong> and <strong>Workflow Architecture</strong>, 
+        and she’s already making waves in these areas while completing her Master’s degree.
+      </p>
+      <p>
+        Despite being in the final stages of her academic journey, Taya is available for work immediately and eager to contribute her talents 
+        to a forward-thinking team. Her ability to bridge technical insight with strategic thinking makes her a standout candidate for roles 
+        in data-driven innovation, AI solutions, or digital transformation.
+      </p>
+      <p>
+        If you or someone in your network is looking for a bright, driven, and capable addition to their team, Taya would love to connect.
+      </p>
+      <a href="Taya_Dailey_Resume.pdf" class="resume-btn" download>Download Resume</a>
+    </section>
+
     <!-- Education & Experience Timeline -->
-    <section class="timeline">
-      <h1 data-aos="fade-up">Resume</h1>
+    <section class="timeline" data-aos="fade-up">
+      <h2>Career Journey</h2>
 
       <div class="timeline-item left" data-aos="fade-right">
         <div class="content">
-          <h2>Oakland University — Rochester Hills, MI</h2>
+          <h3>Oakland University — Rochester Hills, MI</h3>
           <p><strong>Master of Science, Business Analytics</strong> — Expected May 2026</p>
           <p><strong>Bachelor of Science, Management Information Systems</strong> — Dec 2022</p>
         </div>
@@ -40,7 +54,7 @@
 
       <div class="timeline-item right" data-aos="fade-left">
         <div class="content">
-          <h2>Blue Cross Blue Shield of Michigan — Detroit, MI</h2>
+          <h3>Blue Cross Blue Shield of Michigan — Detroit, MI</h3>
           <p><strong>Data & Training Analyst</strong> | Jul 2023 – Aug 2025</p>
           <ul>
             <li>Developed AI-powered training content (Quantum Sim), streamlining onboarding and improving analyst learning efficiency.</li>
@@ -54,8 +68,8 @@
     </section>
 
     <!-- Skills Grid -->
-    <section class="skills">
-      <h2 data-aos="fade-up">Technical Skills</h2>
+    <section class="skills" data-aos="fade-up">
+      <h2>Core Skills & Tools</h2>
       <div class="skills-grid">
         <div class="skill-card" data-aos="zoom-in">
           <h3>Workflow & Automation</h3>
@@ -85,14 +99,9 @@
     </section>
   </main>
 
-  <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
+    AOS.init({ duration: 800, once: true });
   </script>
 </body>
 </html>
-

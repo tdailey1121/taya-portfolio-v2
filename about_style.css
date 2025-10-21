@@ -1,0 +1,163 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #FAFAF7;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== NAVIGATION ====== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(10, 59, 46, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+nav a {
+  text-decoration: none;
+  color: #FAFAF7;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #8A9A5B;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+nav a.active {
+  color: #8A9A5B;
+  font-weight: 600;
+}
+
+/* ====== INTRO SECTION ====== */
+.intro {
+  max-width: 900px;
+  margin: 7rem auto 3rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro h1 {
+  color: #0A3B2E;
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.intro .lead {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(90deg, #8A9A5B, #254441);
+  color: #F8F7F4;
+  font-weight: 600;
+  border-radius: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(138, 154, 91, 0.4);
+}
+
+/* ====== TIMELINE ====== */
+.timeline {
+  width: 85%;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.timeline h2 {
+  text-align: center;
+  color: #0A3B2E;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem 0;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+.timeline-item .content {
+  background: #8A9A5B;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 45%;
+  color: #FAFAF7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-item.right .content {
+  background: #918C83;
+}
+
+/* ====== SKILLS ====== */
+.skills {
+  width: 85%;
+  margin: 4rem auto;
+}
+
+.skills h2 {
+  text-align: center;
+  color: #0A3B2E;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: #fff;
+  border: 2px solid #918C83;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #8A9A5B;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .timeline-item .content {
+    max-width: 90%;
+  }
+
+  .intro h1 {
+    font-size: 2.2rem;
+  }
+}

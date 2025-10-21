@@ -1,29 +1,40 @@
-/* General reset */
+/* ========== RESET & BASE ========== */
 body {
   margin: 0;
-  background: #254441; /* Dark Juniper */
+  background: radial-gradient(circle at bottom right, #254441, #0a1e1b);
   font-family: 'Poppins', sans-serif;
   color: #F8F7F4; /* Alabaster */
+  overflow-x: hidden;
 }
 
-/* Navbar */
+a {
+  text-decoration: none;
+}
+
+/* ========== NAVIGATION ========== */
 nav {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   padding: 1.2rem;
   position: fixed;
   width: 100%;
   top: 0;
-  background: transparent;
+  background: rgba(10, 59, 46, 0.6); /* translucent dark juniper */
+  backdrop-filter: blur(10px);
   z-index: 100;
 }
 
 nav a {
   color: #F8F7F4;
-  text-decoration: none;
   font-weight: 500;
   position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #8A9A5B; /* Moss */
 }
 
 nav a::after {
@@ -33,47 +44,109 @@ nav a::after {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #7A8450; /* Moss */
+  background-color: #8A9A5B;
   transition: all 0.3s ease;
 }
 
 nav a:hover::after {
   width: 100%;
-  animation: bounce 0.4s ease;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+nav a.active {
+  font-weight: 600;
+  color: #8A9A5B;
 }
 
-/* Hero Section */
+/* ========== HERO SECTION ========== */
 .hero {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  padding-left: 8%;
+  padding: 0 8%;
+  position: relative;
+  text-align: left;
+}
+
+.hero-content {
+  max-width: 700px;
+  animation: fadeInUp 1.2s ease forwards;
 }
 
 .hero h1 {
   font-size: 4rem;
   font-weight: 800;
-  opacity: 0;
-  animation: fadeInLeft 1.2s ease forwards;
-  border-bottom: 4px solid #7A8450; /* Moss underline */
+  border-bottom: 4px solid #8A9A5B;
   display: inline-block;
   padding-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .hero p {
   font-size: 1.5rem;
-  margin-top: 1rem;
   color: #D7CEC7; /* Silken */
   font-family: 'Lora', serif;
+  line-height: 1.6;
 }
 
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
+/* CTA Button */
+.cta-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(90deg, #8A9A5B, #254441);
+  color: #F8F7F4;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(138, 154, 91, 0.4);
+}
+
+/* ========== BACKGROUND ANIMATION ========== */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 20% 30%, rgba(138,154,91,0.15), transparent 70%),
+              radial-gradient(circle at 80% 70%, rgba(138,154,91,0.1), transparent 70%);
+  animation: floatBackground 15s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes floatBackground {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-30px, -30px) scale(1.05);
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
